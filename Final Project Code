@@ -2,12 +2,14 @@ import java.util.Scanner;
 	//this imports a scanner for inputs in our program
 	import java.time.LocalDate;   
 	//this imports a library for date to display the days date
-	public class Projecttest {
+	abstract class Projecttest {
 		//name of class
 		double budget;
-		
+		//class attribute
 		public Projecttest(double budget) {
+			//setting up construction with parameter
 			this.budget=.1;
+			//assigning value to budget attribute
 	}
 		public static void main(String[] args)  {
 			{
@@ -53,10 +55,12 @@ import java.util.Scanner;
 			System.out.print("What is your name? ");
 			   name = Gaylord.nextLine();
 			//this prints a statement and asks for input
-				System.out.print("Our budget by default will aim save you 10% of your income. Would you like to use our preplanned budget? If so, type yes. Otherwise hit enter");
+				System.out.print("Our budget by default will aim save you 10% of your income.\nWould you like to use our preplanned budget?\nIf so, type yes. Otherwise hit enter");
+				//this will create a decision to use our pre-made budget value or to create a new one
 				String answer = Gaylord.nextLine();
 				if (answer.equals("yes"))
-				{	Projecttest ourPlan = new Projecttest(0);
+					//records input and makes decision based upon input. If else statement if answer is not "yes"				
+				{	
 					System.out.print("On a scale of 1-5, how good are you at saving money? ");
 					   user= Gaylord.nextInt();   
 					switch (user) {
@@ -140,12 +144,51 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
+					System.out.println("Created By~");
+					String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
+					//This is an array which consists of the creators names, will be printed at end of document
+					System.out.println(namearray[0]);
+					System.out.println(namearray[1]);
+					System.out.println(namearray[2]);
+					try {
+						int[]namearray1 = {0,1,2};
+						System.out.println(namearray1[7]);
+						//We tried to call index 7 of the array, does not exist
+					} catch (Exception e) {
+						System.out.println("Oops, error");
+						//This is exception handling, controls the possible error
+					}
 				}
 				else
 				{
 					System.out.print("Please enter an amount for what percentage of money you would like to save");
 					double budget= (Gaylord.nextFloat()/100);
-					   
+					System.out.print("On a scale of 1-5, how good are you at saving money? ");
+					   user= Gaylord.nextInt();   
+					switch (user) {
+					//This calls the user variable and utilizes a switch statement, with user input
+					case 1:
+						System.out.println("Frank Gallagher status");
+						//Frank Gallagher is a homeless man on a popular show calls "Shameless", horrible with money
+					    break;
+					case 2:
+						//If 2 is typed, sub par will be the output
+					    System.out.println("Sub par");
+					    break;
+					case 3:
+						//if 3 is typed, mediocre will be the output
+					    System.out.println("Mediocre");
+					    break;
+					case 4:
+						//if 4 is typed, solid skills is typed
+					    System.out.println("Solid skills");
+					    break;
+					case 5:
+						//These are all the cases on a scale of 1-5
+					    System.out.println("Mark Cuban status");
+					    //if 5 is typed, congratulations
+					    break;
+					}	   
 					System.out.print("What is your monthly income? ");
 						income = Gaylord.nextFloat(); 
 					//user will be asked to input their income
@@ -204,7 +247,21 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
-				}
-	}
-	}
+			System.out.println("Created By~");
+			String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
+			//This is an array which consists of the creators names, will be printed at end of document
+			System.out.println(namearray[0]);
+			System.out.println(namearray[1]);
+			System.out.println(namearray[2]);
+			try {
+				int[]namearray1 = {0,1,2};
+				System.out.println(namearray1[7]);
+				//We tried to call index 7 of the array, does not exist
+			} catch (Exception e) {
+				System.out.println("Oops, error");
+				//This is exception handling, controls the possible error
+			}
+			}
+			}
+			}
 	}
