@@ -2,7 +2,18 @@ import java.util.Scanner;
 	//this imports a scanner for inputs in our program
 	import java.time.LocalDate;   
 	//this imports a library for date to display the days date
-	abstract class Projecttest {
+	class collegeavg { // Superclass (parent)
+		 public void display() {
+		   System.out.println("The average college student spends");
+		 }
+		}
+		class collegeamount extends collegeavg { //)
+		 public void display() {
+		   super.display(); //
+		   System.out.println("$2082 per month");
+		 }
+		}
+	abstract class Projecttest{
 		//name of class
 		double budget;
 		//class attribute
@@ -146,8 +157,12 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
+					collegeavg myproject = new collegeamount(); //
+				     myproject.display(); //
+					
 					total= .1*expenses;
 					System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
+					//Calculation and print for total savings
 					System.out.println("Created By~");
 					String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
 					//This is an array which consists of the creators names, will be printed at end of document
@@ -251,8 +266,11 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
+					collegeavg myproject = new collegeamount(); //
+				     myproject.display(); // 
 			total= Math.round(budget*expenses);
 			System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
+			//Calculation for total savings if alternate savings amount is requested. Math.round is used to end non-terminating decimal
 			System.out.println("Created By~");
 			String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
 			//This is an array which consists of the creators names, will be printed at end of document
@@ -266,6 +284,7 @@ import java.util.Scanner;
 			} catch (Exception e) {
 				System.out.println("Oops, error");
 				//This is exception handling, controls the possible error
+				
 			}
 			}
 			}
