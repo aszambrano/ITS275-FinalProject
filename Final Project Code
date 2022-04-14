@@ -8,7 +8,7 @@ import java.util.Scanner;
 		//class attribute
 		public Projecttest(double budget) {
 			//setting up construction with parameter
-			this.budget=.1;
+			this.budget= .1;
 			//assigning value to budget attribute
 	}
 		public static void main(String[] args)  {
@@ -41,7 +41,9 @@ import java.util.Scanner;
 			float savings;
 			//savings will be the total amount leftover when income - expenses 
 			int user;
-				
+			//Used for switch statement
+			double total;
+			//Used for calculating the saving total
 			Scanner Gaylord = new Scanner(System.in);
 			//we named the scanner gaylord because roll humps
 			
@@ -144,6 +146,8 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
+					total= .1*expenses;
+					System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
 					System.out.println("Created By~");
 					String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
 					//This is an array which consists of the creators names, will be printed at end of document
@@ -162,7 +166,7 @@ import java.util.Scanner;
 				else
 				{
 					System.out.print("Please enter an amount for what percentage of money you would like to save");
-					double budget= (Gaylord.nextFloat()/100);
+					float budget= (Gaylord.nextFloat()/100);
 					System.out.print("On a scale of 1-5, how good are you at saving money? ");
 					   user= Gaylord.nextInt();   
 					switch (user) {
@@ -247,6 +251,8 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
+			total= Math.round(budget*expenses);
+			System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
 			System.out.println("Created By~");
 			String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
 			//This is an array which consists of the creators names, will be printed at end of document
