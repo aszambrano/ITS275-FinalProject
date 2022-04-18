@@ -51,6 +51,13 @@ import java.util.Scanner;
 			//expenses will be the sum of all rent + groceries + recreation + gas 
 			float savings;
 			//savings will be the total amount leftover when income - expenses 
+			float saving(float income, float expenses) {
+				return income - expenses;
+				System.out.println("Your total savings is: $" + savings)}
+			double saving(double income, float income) {
+				return income - expenses;
+				System.out.println("Your total savings is: $" + savings)
+			}
 			int user;
 			//Used for switch statement
 			double total;
@@ -128,7 +135,7 @@ import java.util.Scanner;
 					savings = income - expenses; 
 					//subtracts expenses from income to get monthly savings
 					
-					System.out.println("Your total savings is: $" + savings);
+					saving();
 					//prints monthly savings
 
 					if (expenses > income || expenses == income)
@@ -234,10 +241,10 @@ import java.util.Scanner;
 					System.out.println("Your total expenses is: $" + expenses);	
 					//prints total expenses
 					
-					savings = income - expenses; 
+					savings = income - expenses;
 					//subtracts expenses from income to get monthly savings
 					
-					System.out.println("Your total savings is: $" + savings);
+					saving();
 					//prints monthly savings
 
 					if (expenses > income || expenses == income)
