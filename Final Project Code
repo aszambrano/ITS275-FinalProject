@@ -25,7 +25,7 @@ import java.util.Scanner;
 	}
 	    // this method is called using an integer 
 	    private static void display(int a){
-	        System.out.println("Thankyou for using our program");
+	        System.out.println("Thank you for using our program");
 	    }
 
 	    // this method is called using a string
@@ -86,7 +86,7 @@ public static void main(String[] args)  {
 			System.out.print("What is your name? ");
 			   name = Gaylord.nextLine();
 			//this prints a statement and asks for input
-				System.out.print("Our budget by default will aim save you 10% of your income.\nWould you like to use our preplanned budget?\nIf so, type yes. Otherwise hit enter");
+				System.out.print("Our budget by default will aim to cut your expenses by 10%.\nWould you like to use our preplanned budget?\nIf so, type yes. Otherwise hit enter");
 				//this will create a decision to use our pre-made budget value or to create a new one
 				String answer = Gaylord.nextLine();
 				if (answer.equals("yes"))
