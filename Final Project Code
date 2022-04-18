@@ -54,7 +54,7 @@ import java.util.Scanner;
 			float saving(float income, float expenses) {
 				return income - expenses;
 				System.out.println("Your total savings is: $" + savings)}
-			double saving(double income, float income) {
+			double saving(double income, double expenses) {
 				return income - expenses;
 				System.out.println("Your total savings is: $" + savings)
 			}
