@@ -7,13 +7,14 @@ import java.util.Scanner;
 		   System.out.println("The average college student spends");
 		 }
 		}
-		class collegeamount extends collegeavg { //)
+		class collegeamount extends collegeavg { //subclass/superclass created, will be called inside program
 		 public void display() {
-		   super.display(); //
+		   super.display();
 		   System.out.println("$2082 per month");
 		 }
 		}
 	abstract class Projecttest{
+		
 		//name of class
 		double budget;
 		//class attribute
@@ -22,12 +23,27 @@ import java.util.Scanner;
 			this.budget= .1;
 			//assigning value to budget attribute
 	}
-		public static void main(String[] args)  {
+	    // this method is called using an integer 
+	    private static void display(int a){
+	        System.out.println("Thankyou for using our program");
+	    }
+
+	    // this method is called using a string
+	    private static void display(String a){
+	        System.out.println("-------------------------------");
+	    }
+
+public static void main(String[] args)  {
 			{
 		   		LocalDate Date = LocalDate.now();
 		   		System.out.println(Date);
 		   		//this will print the date on the top of the console
 		}
+		    {
+		    	display(1);
+		    	display("");
+		        //this is method overloading
+		    }	
 			String name;
 			//declaring all variables
 			//name is a string	
@@ -51,13 +67,8 @@ import java.util.Scanner;
 			//expenses will be the sum of all rent + groceries + recreation + gas 
 			float savings;
 			//savings will be the total amount leftover when income - expenses 
-			float saving(float income, float expenses) {
-				return income - expenses;
-				System.out.println("Your total savings is: $" + savings)}
-			double saving(double income, double expenses) {
-				return income - expenses;
-				System.out.println("Your total savings is: $" + savings)
-			}
+			float saving;
+			
 			int user;
 			//Used for switch statement
 			double total;
@@ -135,7 +146,7 @@ import java.util.Scanner;
 					savings = income - expenses; 
 					//subtracts expenses from income to get monthly savings
 					
-					saving();
+					System.out.println("Your total savings is: $" + savings);
 					//prints monthly savings
 
 					if (expenses > income || expenses == income)
@@ -164,8 +175,8 @@ import java.util.Scanner;
 						System.out.println("You spend more than the average college student");
 						//this will print if this if statement is satisfied
 					}
-					collegeavg myproject = new collegeamount(); //
-				     myproject.display(); //
+					collegeavg myproject = new collegeamount(); 
+				     myproject.display(); //displays method defined at top of program
 					
 					total= .1*expenses;
 					System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
@@ -189,6 +200,7 @@ import java.util.Scanner;
 				{
 					System.out.print("Please enter an amount for what percentage of money you would like to save");
 					float budget= (Gaylord.nextFloat()/100);
+					//does calculation to get accurate percentage
 					System.out.print("On a scale of 1-5, how good are you at saving money? ");
 					   user= Gaylord.nextInt();   
 					switch (user) {
@@ -241,10 +253,10 @@ import java.util.Scanner;
 					System.out.println("Your total expenses is: $" + expenses);	
 					//prints total expenses
 					
-					savings = income - expenses;
+					savings = income - expenses; 
 					//subtracts expenses from income to get monthly savings
 					
-					saving();
+					System.out.println("Your total savings is: $" + savings);
 					//prints monthly savings
 
 					if (expenses > income || expenses == income)
@@ -291,7 +303,6 @@ import java.util.Scanner;
 			} catch (Exception e) {
 				System.out.println("Oops, error");
 				//This is exception handling, controls the possible error
-				
 			}
 			}
 			}
