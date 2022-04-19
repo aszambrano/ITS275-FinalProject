@@ -1,310 +1,306 @@
 import java.util.Scanner;
-	//this imports a scanner for inputs in our program
-	import java.time.LocalDate;   
-	//this imports a library for date to display the days date
-	class collegeavg { // Superclass (parent)
-		 public void display() {
-		   System.out.println("The average college student spends");
-		 }
-		}
-		class collegeamount extends collegeavg { //subclass/superclass created, will be called inside program
-		 public void display() {
-		   super.display();
-		   System.out.println("$2082 per month");
-		 }
-		}
-	abstract class Projecttest{
-		
-		//name of class
-		double budget;
-		//class attribute
-		public Projecttest(double budget) {
-			//setting up construction with parameter
-			this.budget= .1;
-			//assigning value to budget attribute
+//this imports a scanner for inputs in our program
+import java.time.LocalDate;   
+//this imports a library for date to display the days date
+abstract class collegeavg { // superclass to set up super keyword later
+	 public void display() {
+	   System.out.println("The average college student spends");
+	 }
 	}
-	    // this method is called using an integer 
-	    private static void display(int a){
-	        System.out.println("Thank you for using our program");
-	    }
-
-	    // this method is called using a string
-	    private static void display(String a){
-	        System.out.println("-------------------------------");
-	    }
-
+	class collegeamount extends collegeavg { //this subclass makes use of the super keyword to override the display method
+	 public void display() {
+	   super.display();
+	   System.out.println("$2082 per month");
+	 }
+	}
+public class Projecttest{ //this is the main class
+	public static String name;
+	//setting up a string for the user to input their name further down the code 
+	double budget;
+	//class attribute
+	public Projecttest(double budget) {
+		//setting up construction with parameter
+		this.budget= budget;
+		//assigning value to budget attribute
+}
+    // this method is called using an integer 
+    private static void display(int a){
+        System.out.println("Thank you for using our program "+name); //the display method will be called using an integer
+    }
+    private static void display(String a){
+        System.out.println("-------------------------------"); // this method is called using a string
+    }
 public static void main(String[] args)  {
-			{
-		   		LocalDate Date = LocalDate.now();
-		   		System.out.println(Date);
-		   		//this will print the date on the top of the console
-		}
-		    {
+		{
+	   		LocalDate Date = LocalDate.now();
+	   		System.out.println(Date);
+	   		//this will print the date on the top of the console
+	}
+		//declaring all variables	
+		String program;
+		//declaring program as a string for if you want to run program
+		float income;
+		//income is a float
+		float rent;
+		//rent is a float
+		float groceries;
+		//groceries are a float
+		float recreation;
+		//recreation is a float
+		float gas;
+		//gas is a float
+		int average;
+		average=2082;
+		//this is declaring a constant to the national average 
+		//monthly spending of a college student
+		float expenses;
+		//expenses will be the sum of all rent + groceries + recreation + gas 
+		float savings;
+		//savings will be the total amount leftover when income - expenses 
+		int user;
+		//Used for switch statement
+		double total;
+		//Used for calculating the saving total
+		Scanner Gaylord = new Scanner(System.in);
+		//we named the scanner gaylord because roll humps
+		
+		System.out.print("If you would like to run our program hit enter, if not type 'no'");
+			program = Gaylord.nextLine();
+			//This will be the deciding while loop to either run the program or not
+		
+		while (program.equals ("no"));
+		//if 'no' is typed, the program will not run, if anything else, it will
+		{
+		System.out.print("What is your name? ");
+		   name = Gaylord.nextLine();
+		//this prints a statement and asks for input
+		   {
 		    	display(1);
 		    	display("");
-		        //this is method overloading
-		    }	
-			String name;
-			//declaring all variables
-			//name is a string	
-			String program;
-			//declaring program as a string for if you want to run program
-			float income;
-			//income is a float
-			float rent;
-			//rent is a float
-			float groceries;
-			//groceries are a float
-			float recreation;
-			//recreation is a float
-			float gas;
-			//gas is a float
-			int average;
-			average=2082;
-			//this is declaring a constant to the national average 
-			//monthly spending of a college student
-			float expenses;
-			//expenses will be the sum of all rent + groceries + recreation + gas 
-			float savings;
-			//savings will be the total amount leftover when income - expenses 
-			float saving;
-			
-			int user;
-			//Used for switch statement
-			double total;
-			//Used for calculating the saving total
-			Scanner Gaylord = new Scanner(System.in);
-			//we named the scanner gaylord because roll humps
-			
-			System.out.print("If you would like to run our program hit enter, if not type 'no'");
-				program = Gaylord.nextLine();
-				//This will be the deciding while loop to either run the program or not
-			
-			while (program.equals ("no"));
-			//if 'no' is typed, the program will not run, if anything else, it will
-			{
-			System.out.print("What is your name? ");
-			   name = Gaylord.nextLine();
-			//this prints a statement and asks for input
-				System.out.print("Our budget by default will aim to cut your expenses by 10%.\nWould you like to use our preplanned budget?\nIf so, type yes. Otherwise hit enter");
-				//this will create a decision to use our pre-made budget value or to create a new one
-				String answer = Gaylord.nextLine();
-				if (answer.equals("yes"))
-					//records input and makes decision based upon input. If else statement if answer is not "yes"				
-				{	
-					System.out.print("On a scale of 1-5, how good are you at saving money? ");
-					   user= Gaylord.nextInt();   
-					switch (user) {
-					//This calls the user variable and utilizes a switch statement, with user input
-					case 1:
-						System.out.println("Frank Gallagher status");
-						//Frank Gallagher is a homeless man on a popular show calls "Shameless", horrible with money
-					    break;
-					case 2:
-						//If 2 is typed, sub par will be the output
-					    System.out.println("Sub par");
-					    break;
-					case 3:
-						//if 3 is typed, mediocre will be the output
-					    System.out.println("Mediocre");
-					    break;
-					case 4:
-						//if 4 is typed, solid skills is typed
-					    System.out.println("Solid skills");
-					    break;
-					case 5:
-						//These are all the cases on a scale of 1-5
-					    System.out.println("Mark Cuban status");
-					    //if 5 is typed, congratulations
-					    break;
-					}
-					System.out.print("What is your monthly income? ");
-						income = Gaylord.nextFloat(); 
-					//user will be asked to input their income
-					System.out.print("What is yout monthly rent? ");
-						rent = Gaylord.nextFloat();
-					//user will be asked to input their rent
+		        //we overloaded the method to take both ints and strings
+		    }
+			System.out.print("Our budget by default will aim save you 10% of your income.\nWould you like to use our preplanned budget?\nIf so, type yes. Otherwise hit enter");
+			//this will create a decision to use our pre-made budget value or to create a new one
+			String answer = Gaylord.nextLine();
+			if (answer.equals("yes"))
+				//records input and makes decision based upon input. If else statement if answer is not "yes"				
+			{	
+				System.out.print("On a scale of 1-5, how good are you at saving money? ");
+				   user= Gaylord.nextInt();   
+				switch (user) {
+				//This calls the user variable and utilizes a switch statement, with user input
+				case 1:
+					System.out.println("Frank Gallagher status");
+					//Frank Gallagher is a homeless man on a popular show calls "Shameless", horrible with money
+				    break;
+				case 2:
+					//If 2 is typed, sub par will be the output
+				    System.out.println("Sub par");
+				    break;
+				case 3:
+					//if 3 is typed, mediocre will be the output
+				    System.out.println("Mediocre");
+				    break;
+				case 4:
+					//if 4 is typed, solid skills is typed
+				    System.out.println("Solid skills");
+				    break;
+				case 5:
+					//These are all the cases on a scale of 1-5
+				    System.out.println("Mark Cuban status");
+				    //if 5 is typed, congratulations
+				    break;
+				}
+				System.out.print("What is your monthly income? ");
+					income = Gaylord.nextFloat(); 
+				//user will be asked to input their income
+				System.out.print("What is yout monthly rent? ");
+					rent = Gaylord.nextFloat();
+				//user will be asked to input their rent
+				
+				System.out.print("What is your monthly grocery expense? ");
+					groceries = Gaylord.nextFloat();
+				//user will be asked to input their grocery spending
+				
+				System.out.print("What do you spend on recreational activites per month? ");
+					recreation = Gaylord.nextFloat();
+				//user will be asked to input their recreational spending
 					
-					System.out.print("What is your monthly grocery expense? ");
-						groceries = Gaylord.nextFloat();
-					//user will be asked to input their grocery spending
-					
-					System.out.print("What do you spend on recreational activites per month? ");
-						recreation = Gaylord.nextFloat();
-					//user will be asked to input their recreational spending
-						
-					System.out.print("What do you spend on gas per month?");
-						gas = Gaylord.nextFloat();
-					//user will be asked to input their gas spending
-					
-					expenses = rent + groceries + recreation + gas;
-					//this calculates total monthly expenses
-					
-					System.out.println("Your total expenses is: $" + expenses);	
-					//prints total expenses
-					
-					savings = income - expenses; 
-					//subtracts expenses from income to get monthly savings
-					
-					System.out.println("Your total savings is: $" + savings);
-					//prints monthly savings
+				System.out.print("What do you spend on gas per month?");
+					gas = Gaylord.nextFloat();
+				//user will be asked to input their gas spending
+				
+				expenses = rent + groceries + recreation + gas;
+				//this calculates total monthly expenses
+				
+				System.out.println("Your total expenses is: $" + expenses);	
+				//prints total expenses
+				
+				savings = income - expenses; 
+				//subtracts expenses from income to get monthly savings
+				
+				System.out.println("Your total savings is: $" + savings);
+				//prints monthly savings
 
-					if (expenses > income || expenses == income)
-					//this uses an or conditional to compare expenses and income in an if-else statement
-					{
-						System.out.println("You do not have money left over for savings.");
-						//This will print if the if is satisfied
-					}
-					else
-					//if-else statement
-					{
-						System.out.println("Congratulations! You are saving money.");
-						//this will print if the if is not satisfied
-					}
-					
-					if (expenses <= average)
-					//this is an if statement to compare expenses and average spending
-					{
-						System.out.println("You spend less money than the average college student.");
-						//this will print if the if statement is satisfied
-					}
-					
-					if (expenses > average)
-					//this is another if statement comparing expenses and average
-					{
-						System.out.println("You spend more than the average college student");
-						//this will print if this if statement is satisfied
-					}
-					collegeavg myproject = new collegeamount(); 
-				     myproject.display(); //displays method defined at top of program
-					
-					total= .1*expenses;
-					System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
-					//Calculation and print for total savings
-					System.out.println("Created By~");
-					String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
-					//This is an array which consists of the creators names, will be printed at end of document
-					System.out.println(namearray[0]);
-					System.out.println(namearray[1]);
-					System.out.println(namearray[2]);
-					try {
-						int[]namearray1 = {0,1,2};
-						System.out.println(namearray1[7]);
-						//We tried to call index 7 of the array, does not exist
-					} catch (Exception e) {
-						System.out.println("Oops, error");
-						//This is exception handling, controls the possible error
-					}
+				if (expenses > income || expenses == income)
+				//this uses an or conditional to compare expenses and income in an if-else statement
+				{
+					System.out.println("You do not have money left over for savings.");
+					//This will print if the if is satisfied
 				}
 				else
+				//if-else statement
 				{
-					System.out.print("Please enter an amount for what percentage of money you would like to save");
-					float budget= (Gaylord.nextFloat()/100);
-					//does calculation to get accurate percentage
-					System.out.print("On a scale of 1-5, how good are you at saving money? ");
-					   user= Gaylord.nextInt();   
-					switch (user) {
-					//This calls the user variable and utilizes a switch statement, with user input
-					case 1:
-						System.out.println("Frank Gallagher status");
-						//Frank Gallagher is a homeless man on a popular show calls "Shameless", horrible with money
-					    break;
-					case 2:
-						//If 2 is typed, sub par will be the output
-					    System.out.println("Sub par");
-					    break;
-					case 3:
-						//if 3 is typed, mediocre will be the output
-					    System.out.println("Mediocre");
-					    break;
-					case 4:
-						//if 4 is typed, solid skills is typed
-					    System.out.println("Solid skills");
-					    break;
-					case 5:
-						//These are all the cases on a scale of 1-5
-					    System.out.println("Mark Cuban status");
-					    //if 5 is typed, congratulations
-					    break;
-					}	   
-					System.out.print("What is your monthly income? ");
-						income = Gaylord.nextFloat(); 
-					//user will be asked to input their income
-						
-					System.out.print("What is yout monthly rent? ");
-						rent = Gaylord.nextFloat();
-					//user will be asked to input their rent
+					System.out.println("Congratulations! You are saving money.");
+					//this will print if the if is not satisfied
+				}
+				
+				if (expenses <= average)
+				//this is an if statement to compare expenses and average spending
+				{
+					System.out.println("You spend less money than the average college student.");
+					//this will print if the if statement is satisfied
+				}
+				
+				if (expenses > average)
+				//this is another if statement comparing expenses and average
+				{
+					System.out.println("You spend more than the average college student");
+					//this will print if this if statement is satisfied
+				}
+				collegeavg myproject = new collegeamount(); 
+			     myproject.display(); //displays method defined at top of program
+			     
+				Projecttest obj=new Projecttest(.1);
+				//this creates an object 
+				total= obj.budget*expenses;
+				//this is calling the constructor that we made with the this keyword
+				System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
+				//Calculation and print for total savings
+				System.out.println("Created By~");
+				String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
+				//This is an array which consists of the creators names, will be printed at end of document
+				System.out.println(namearray[0]);
+				System.out.println(namearray[1]);
+				System.out.println(namearray[2]);
+				try {
+					int[]namearray1 = {0,1,2};
+					System.out.println(namearray1[7]);
+					//We tried to call index 7 of the array, does not exist
+				} catch (Exception e) {
+					System.out.println("Oops, error");
+					//This is exception handling, controls the possible error
+				}
+			}
+			else
+			{
+				System.out.print("Please enter an amount for what percentage of money you would like to save");
+				float budget= (Gaylord.nextFloat()/100);
+				//does calculation to get accurate percentage
+				System.out.print("On a scale of 1-5, how good are you at saving money? ");
+				   user= Gaylord.nextInt();   
+				switch (user) {
+				//This calls the user variable and utilizes a switch statement, with user input
+				case 1:
+					System.out.println("Frank Gallagher status");
+					//Frank Gallagher is a homeless man on a popular show calls "Shameless", horrible with money
+				    break;
+				case 2:
+					//If 2 is typed, sub par will be the output
+				    System.out.println("Sub par");
+				    break;
+				case 3:
+					//if 3 is typed, mediocre will be the output
+				    System.out.println("Mediocre");
+				    break;
+				case 4:
+					//if 4 is typed, solid skills is typed
+				    System.out.println("Solid skills");
+				    break;
+				case 5:
+					//These are all the cases on a scale of 1-5
+				    System.out.println("Mark Cuban status");
+				    //if 5 is typed, congratulations
+				    break;
+				}	   
+				System.out.print("What is your monthly income? ");
+					income = Gaylord.nextFloat(); 
+				//user will be asked to input their income
 					
-					System.out.print("What is your monthly grocery expense? ");
-						groceries = Gaylord.nextFloat();
-					//user will be asked to input their grocery spending
+				System.out.print("What is yout monthly rent? ");
+					rent = Gaylord.nextFloat();
+				//user will be asked to input their rent
+				
+				System.out.print("What is your monthly grocery expense? ");
+					groceries = Gaylord.nextFloat();
+				//user will be asked to input their grocery spending
+				
+				System.out.print("What do you spend on recreational activites per month? ");
+					recreation = Gaylord.nextFloat();
+				//user will be asked to input their recreational spending
 					
-					System.out.print("What do you spend on recreational activites per month? ");
-						recreation = Gaylord.nextFloat();
-					//user will be asked to input their recreational spending
-						
-					System.out.print("What do you spend on gas per month?");
-						gas = Gaylord.nextFloat();
-					//user will be asked to input their gas spending
-					
-					expenses = rent + groceries + recreation + gas;
-					//this calculates total monthly expenses
-					
-					System.out.println("Your total expenses is: $" + expenses);	
-					//prints total expenses
-					
-					savings = income - expenses; 
-					//subtracts expenses from income to get monthly savings
-					
-					System.out.println("Your total savings is: $" + savings);
-					//prints monthly savings
+				System.out.print("What do you spend on gas per month?");
+					gas = Gaylord.nextFloat();
+				//user will be asked to input their gas spending
+				
+				expenses = rent + groceries + recreation + gas;
+				//this calculates total monthly expenses
+				
+				System.out.println("Your total expenses is: $" + expenses);	
+				//prints total expenses
+				
+				savings = income - expenses; 
+				//subtracts expenses from income to get monthly savings
+				
+				System.out.println("Your total savings is: $" + savings);
+				//prints monthly savings
 
-					if (expenses > income || expenses == income)
-					//this uses an or conditional to compare expenses and income in an if-else statement
-					{
-						System.out.println("You do not have money left over for savings.");
-						//This will print if the if is satisfied
-					}
-					else
-					//if-else statement
-					{
-						System.out.println("Congratulations! You are saving money.");
-						//this will print if the if is not satisfied
-					}
-					
-					if (expenses <= average)
-					//this is an if statement to compare expenses and average spending
-					{
-						System.out.println("You spend less money than the average college student.");
-						//this will print if the if statement is satisfied
-					}
-					
-					if (expenses > average)
-					//this is another if statement comparing expenses and average
-					{
-						System.out.println("You spend more than the average college student");
-						//this will print if this if statement is satisfied
-					}
-					collegeavg myproject = new collegeamount(); //
-				     myproject.display(); // 
-			total= Math.round(budget*expenses);
-			System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
-			//Calculation for total savings if alternate savings amount is requested. Math.round is used to end non-terminating decimal
-			System.out.println("Created By~");
-			String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
-			//This is an array which consists of the creators names, will be printed at end of document
-			System.out.println(namearray[0]);
-			System.out.println(namearray[1]);
-			System.out.println(namearray[2]);
-			try {
-				int[]namearray1 = {0,1,2};
-				System.out.println(namearray1[7]);
-				//We tried to call index 7 of the array, does not exist
-			} catch (Exception e) {
-				System.out.println("Oops, error");
-				//This is exception handling, controls the possible error
-			}
-			}
-			}
-			}
-	}
+				if (expenses > income || expenses == income)
+				//this uses an or conditional to compare expenses and income in an if-else statement
+				{
+					System.out.println("You do not have money left over for savings.");
+					//This will print if the if is satisfied
+				}
+				else
+				//if-else statement
+				{
+					System.out.println("Congratulations! You are saving money.");
+					//this will print if the if is not satisfied
+				}
+				
+				if (expenses <= average)
+				//this is an if statement to compare expenses and average spending
+				{
+					System.out.println("You spend less money than the average college student.");
+					//this will print if the if statement is satisfied
+				}
+				
+				if (expenses > average)
+				//this is another if statement comparing expenses and average
+				{
+					System.out.println("You spend more than the average college student");
+					//this will print if this if statement is satisfied
+				}
+				collegeavg myproject = new collegeamount(); //
+			     myproject.display(); // 
+		total= Math.round(budget*expenses);
+		System.out.println("You need to spend $"+total+" less per month in order to save your desired amount.");
+		//Calculation for total savings if alternate savings amount is requested. Math.round is used to end non-terminating decimal
+		System.out.println("Created By~");
+		String[] namearray = {"Cameron Andrews", "Alek Zambarano", "Gabriel Hixenbaugh"};
+		//This is an array which consists of the creators names, will be printed at end of document
+		System.out.println(namearray[0]);
+		System.out.println(namearray[1]);
+		System.out.println(namearray[2]);
+		try {
+			int[]namearray1 = {0,1,2};
+			System.out.println(namearray1[7]);
+			//We tried to call index 7 of the array, does not exist
+		} catch (Exception e) {
+			System.out.println("Oops, error");
+			//This is exception handling, controls the possible error
+		}
+		}
+		}
+		}
+}
